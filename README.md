@@ -32,29 +32,5 @@ Build an effective business intelligence dashboard using the Zen Power solar dat
 
 ---
 
-## Database Connections
-
-**Database URL:**
-```
-https://yxquddtkawapgpejdglo.supabase.co
-
-```
-
-**
-
-**DB Password:** *(to be distributed separately)*
-
-> You likely won't need the poolers below, but they're included just in case.
-
-**Transaction Pooler:**
-```
-postgresql://postgres.yxquddtkawapgpejdglo:[YOUR-PASSWORD]@aws-1-us-west-2.pooler.supabase.com:6543/postgres
-```
-
-**Session Pooler:**
-```
-postgresql://postgres.yxquddtkawapgpejdglo:[YOUR-PASSWORD]@aws-1-us-west-2.pooler.supabase.com:5432/postgres
-```
-
 
 
