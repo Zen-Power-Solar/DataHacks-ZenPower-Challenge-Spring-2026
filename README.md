@@ -34,3 +34,17 @@ Build an effective business intelligence dashboard using the Zen Power solar dat
 
 
 
+# Data Dictionary:
+
+### Records
+
+### Titan All Addresses
+
+### SunRun
+
+### Sullivan Solar
+
+### Solar City
+
+### Freedom Forever
+
