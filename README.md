@@ -62,10 +62,42 @@ Build an effective business intelligence dashboard using the Zen Power solar dat
 
 
 ### Titan All Addresses
+| Column Name    | Data Type | Description                                              |
+|---------------|----------|----------------------------------------------------------|
+| BIZ_NAME      | object   | The registered legal or trading name of the business entity.               |
+| NAME          | object   | The name of the primary contact person or authorized representative.       |
+| PRIMARY_EMAIL | object   | Primary contact email address for the company            |
+| PRIMARY_PHONE | object   | Main telephone number for the business                   |
+| LICENSE       | object   | Professional contractor license number                   |
+| PERMIT_ID     | object   | A unique alphanumeric identifier assigned to the specific installation permit. |
+| STREET_NO     | float64  | House or building number of the project site             |
+| STREET        | object   | Name of the street where the project is located          |
+| CITY          | object   | City of the project location                             |
+| STATE         | object   | Two-letter state code     
+| ZIPCODE       | float64  | The five-digit postal code for the project address.                        |
+| PERMIT_DATE   | object   | Date the permit was issued or recorded                   |
 
 ### SunRun
+| Column Name      | Data Type | Description                         |
+|------------------|----------|-------------------------------------|
+| CONTRACTOR_NAME  | object   | Name of the contractor              |
+| PROJECT_ADDRESS  | object   | Address of the project site         |
+| INSTALL_DATE     | object   | Date of project installation        |
 
 ### Sullivan Solar
+| Column Name    | Data Type | Description                                              |
+|---------------|----------|----------------------------------------------------------|
+| BIZ_NAME      | object   | Legal or trade name of the business entity               |
+| PRIMARY_EMAIL | object   | Primary contact email address for the company            |
+| PRIMARY_PHONE | object   | Main telephone number for the business                   |
+| LICENSE       | object   | Professional contractor license number                   |
+| PERMIT_ID     | object   | A unique alphanumeric identifier assigned to the specific installation permit. |
+| STREET_NO     | float64  | House or building number of the project site             |
+| STREET        | object   | Name of the street where the project is located          |
+| CITY          | object   | City of the project location                             |
+| STATE         | object   | Two-letter state code                                    |
+| ZIPCODE       | float64  | The five-digit postal code for the project address.                        |
+| PERMIT_DATE   | object   | Date the permit was issued or recorded                   |
 
 ### Solar City
 | Variable | Description | Datatype |
