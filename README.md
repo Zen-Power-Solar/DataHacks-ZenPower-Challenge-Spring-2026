@@ -102,15 +102,99 @@ Build an effective business intelligence dashboard using the Zen Power solar dat
 ### Solar City
 | Variable | Description | Datatype |
 |---|---|---|
-| BIZ_NAME | The name of the business | Text |
-| ID | Unique identifier for the permit. | Text |
-| Permit Number | Additional identifier of the permit. | Text | 
-| APN | Assessor's Parcel Number. Official authorization of the permit | Text | 
-| COUNTY_FIPS | A County FIPS code is a five-digit Federal Information Processing Standard code that uniquely identifies counties and county equivalents in the US. It consists of a two-digit state code combined with a three-digit county code, ensuring standardized identification across government data. For example, 06037 identifies California (06) and Los Angeles County (037). | Number |
-| STATE_FIPS | Same as above but for state | Number | 
-CBSA | Core based statistical area. Geographic entity defined by the Office of Management and Budget for Federal Data Collection. | Text | 
-| CBSA_FIPS | FIPS number for the previous column | Number | 
-|
+| BIZ_NAME | Name of the business or company that filed or is associated with the permit (e.g., contractor or solar installer). | Text |
+| ID | Internal unique identifier for the permit record. | Text |
+| PERMIT_NUMBER | Official permit number assigned by the issuing jurisdiction (e.g., BLD2017-05386). | Text |
+| APN | Assessor's Parcel Number — a unique identifier assigned by the county assessor to a parcel of real property. | Text |
+| COUNTY_FIPS | Three-digit Federal Information Processing Standard (FIPS) code identifying a county within a state. Often paired with STATE_FIPS to form a full five-digit county FIPS code (e.g., 001 = Alameda County, CA). | Text |
+| STATE_FIPS | Two-digit FIPS code identifying the U.S. state in which the permit was issued (e.g., 06 = California). | Text |
+| CBSA | Core-Based Statistical Area name — a geographic entity defined by the Office of Management and Budget (OMB) grouping counties around an urban center (e.g., "San Francisco-Oakland-Berkeley, CA"). | Text |
+| CBSA_FIPS | Numeric FIPS code corresponding to the CBSA (e.g., 41860 = San Francisco-Oakland-Berkeley, CA). | Number |
+| STATUS | Current status of the permit in the approval/inspection lifecycle (e.g., final, issued, pending). | Text |
+| START_DATE | Date on which permitted work was started or the permit became active. | Date |
+| END_DATE | Date on which the permit period ended or work was completed. | Date |
+| ISSUE_DATE | Date the permit was officially issued by the jurisdiction. | Date |
+| FILE_DATE | Date the permit application was filed with the jurisdiction. | Date |
+| FINAL_DATE | Date the permit received its final inspection or sign-off. | Date |
+| TYPE | High-level category of the permit (e.g., Building, Electrical, Mechanical). | Text |
+| SUBTYPE | More granular classification within the permit type. | Text |
+| APPROVAL_DURATION | Number of days between the file date and the issue date — represents how long the approval process took. | Number |
+| CONSTRUCTION_DURATION | Number of days between the issue date and the final date — represents how long construction took. | Number |
+| TOTAL_DURATION | Total number of days from file date to final date, encompassing both approval and construction phases. | Number |
+| FEES | Total fees assessed for the permit, in USD. | Number |
+| JOB_VALUE | Estimated dollar value of the work covered by the permit, in USD. | Number |
+| INSPECTION_PASS_RATE | Ratio of passed inspections to total inspections conducted, expressed as a decimal (e.g., 0.667 = 2 out of 3 passed). | Number |
+| INSPECTION_PASSED | Indicates whether the permit ultimately passed its final inspection (true/false). | Boolean |
+| DESCRIPTION | Free-text description of the permitted work as entered by the applicant or jurisdiction (e.g., system size, panel count, scope of work). | Text |
+| OWNER_NAME | Full name of the property owner. | Text |
+| OWNER_STREET | Street address of the property owner. | Text |
+| OWNER_CITY | City of the property owner's mailing address. | Text |
+| OWNER_STATE | State of the property owner's mailing address. | Text |
+| OWNER_ZIPCODE | ZIP code of the property owner's mailing address. | Text |
+| OWNER_EMAIL | Email address of the property owner. | Text |
+| OWNER_PHONE | Phone number of the property owner. | Text |
+| APPLICANT_NAME | Full name of the permit applicant, typically the contractor or installer. | Text |
+| APPLICANT_STREET | Street address of the permit applicant. | Text |
+| APPLICANT_CITY | City of the permit applicant's address. | Text |
+| APPLICANT_STATE | State of the permit applicant's address. | Text |
+| APPLICANT_ZIPCODE | ZIP code of the permit applicant's address. | Text |
+| APPLICANT_EMAIL | Email address of the permit applicant. | Text |
+| APPLICANT_PHONE | Phone number of the permit applicant. | Text |
+| WINDOW_DOOR | Indicates whether the permit includes window or door work (true/false). | Boolean |
+| STREET_NO | Street number of the property where work is being performed. | Text |
+| STREET | Street name of the property where work is being performed. | Text |
+| CITY | City where the permitted property is located. | Text |
+| ZIPCODE | ZIP code of the permitted property. | Text |
+| ZIPCODE_EXT | ZIP+4 extension code for more precise mail routing. | Text |
+| JURISDICTION | Name of the local government entity (city, county, or special district) that issued the permit. | Text |
+| COUNTY | Name of the county where the permitted property is located. | Text |
+| STATE | Two-letter state abbreviation where the permitted property is located (e.g., CA). | Text |
+| LAT | Latitude coordinate of the permitted property. | Number |
+| LONG | Longitude coordinate of the permitted property. | Number |
+| ADDRESS_ID | Internal identifier for the property address. | Text |
+| CITY_ID | Internal identifier for the city. | Text |
+| JURISDICTION_ID | Internal identifier for the issuing jurisdiction. | Text |
+| COUNTY_ID | Internal identifier for the county. | Text |
+| ADDITION | Indicates whether the permit includes a building addition (true/false). | Boolean |
+| ADU | Indicates whether the permit includes an Accessory Dwelling Unit (true/false). | Boolean |
+| BATHROOM | Indicates whether the permit includes bathroom work (true/false). | Boolean |
+| BATTERY | Indicates whether the permit includes battery storage installation (true/false). | Boolean |
+| DEMOLITION | Indicates whether the permit includes demolition work (true/false). | Boolean |
+| ELECTRIC_METER | Indicates whether the permit includes electric meter work (true/false). | Boolean |
+| ELECTRICAL | Indicates whether the permit includes general electrical work (true/false). | Boolean |
+| EV_CHARGER | Indicates whether the permit includes EV charger installation (true/false). | Boolean |
+| FIRE_SPRINKLER | Indicates whether the permit includes fire sprinkler work (true/false). | Boolean |
+| GAS | Indicates whether the permit includes gas line work (true/false). | Boolean |
+| GENERATOR | Indicates whether the permit includes generator installation (true/false). | Boolean |
+| GRADING | Indicates whether the permit includes grading or earthwork (true/false). | Boolean |
+| HEAT_PUMP | Indicates whether the permit includes heat pump installation (true/false). | Boolean |
+| HVAC | Indicates whether the permit includes HVAC work (true/false). | Boolean |
+| KITCHEN | Indicates whether the permit includes kitchen work (true/false). | Boolean |
+| NEW_CONSTRUCTION | Indicates whether the permit is for new construction rather than a modification to an existing structure (true/false). | Boolean |
+| PLUMBING | Indicates whether the permit includes plumbing work (true/false). | Boolean |
+| POOL_AND_HOT_TUB | Indicates whether the permit includes pool or hot tub installation (true/false). | Boolean |
+| REMODEL | Indicates whether the permit includes remodeling work (true/false). | Boolean |
+| ROOFING | Indicates whether the permit includes roofing work (true/false). | Boolean |
+| SOLAR | Indicates whether the permit includes solar installation (true/false). | Boolean |
+| WATER_HEATER | Indicates whether the permit includes water heater installation or replacement (true/false). | Boolean |
+| PROPERTY_YEAR_BUILT | The year the property was originally constructed. | Number |
+| PROPERTY_LOT_SIZE | Size of the property lot in square feet. | Number |
+| PROPERTY_STORY_COUNT | Number of stories in the primary structure on the property. | Number |
+| PROPERTY_UNIT_COUNT | Number of residential or commercial units on the property. | Number |
+| PROPERTY_ASSESS_MARKET_VALUE | Assessed market value of the property in USD, as determined by the county assessor. | Number |
+| PROPERTY_TYPE | Broad classification of the property (e.g., residential, commercial). | Text |
+| PROPERTY_TYPE_DETAIL | More granular property type classification (e.g., Single Family, Multi-Family, Commercial Office). | Text |
+| PROPERTY_BUILDING_AREA | Total building area of the structure in square feet. | Number |
+| PROPERTY_LEGAL_OWNER | Legal name(s) of the property owner(s) as recorded in public records. | Text |
+| PROPERTY_OWNER_TYPE | Classification of the property owner (e.g., individual, LLC, trust, corporate). | Text |
+| PROPERTY_CENSUS_TRACT | Census tract identifier for the property, used for demographic and geographic analysis. | Text |
+| PROPERTY_CONGRESSIONAL_DISTRICT | The U.S. Congressional district number in which the property is located. | Text |
+| CONTRACTOR_ID | Internal identifier for the individual contractor associated with the permit. | Text |
+| CONTRACTOR_GROUP_ID | Internal identifier for the contractor's company or group. | Text |
+| FIRST_SEEN_DATE | Date the permit record was first observed or ingested into the dataset. | Date |
+| _META_LOADED_AT | Timestamp indicating when the record was loaded into the data warehouse. | Timestamp |
+| _META_SOURCE_FILE_NAME | Name of the source file from which the record was ingested, used for data lineage and auditing. | Text |
+
 ### Freedom Forever
 | Variable | Description | Datatype |
 |---|---|---|
